@@ -66,7 +66,7 @@ public class CodeGenerator {
         // 数据源配置
         DataSourceConfig dataSourceConfiguration = new DataSourceConfig();
 
-        dataSourceConfiguration.setUrl("jdbc:mysql://localhost:3306/mall#63;useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC");
+        dataSourceConfiguration.setUrl("jdbc:mysql://localhost:3306/shopping_mall#63;useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC");
 
         // dataSourceConfiguration.setSchemaName("public");
         dataSourceConfiguration.setDriverName("com.mysql.cj.jdbc.Driver");
