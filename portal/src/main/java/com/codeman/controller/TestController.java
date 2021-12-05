@@ -1,14 +1,11 @@
 package com.codeman.controller;
 
-
-
-import org.springframework.web.bind.annotation.RequestMapping;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-
+@Api(tags="swagger-ui测试")
 @RestController
-@RequestMapping("/test")
 public class TestController {
+
 
 }
