@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @file MP-Spring
  * @create 2020-08-06 9:11
  */
-public class CodeGenerator {
+public class MybatisPlusCodeGenerator {
 
     /**
      * <p>

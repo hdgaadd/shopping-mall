@@ -2,6 +2,9 @@ package com.codeman.mapper;
 
 import com.codeman.domain.Product;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * <p>

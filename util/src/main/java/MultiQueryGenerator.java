@@ -1,28 +1,36 @@
-/**
- * Created by hdgaadd on 2021/12/06/18:25
- */
-
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- * @author: WBG
- * @description: 自动创建service、impl、controller
- * @date: 2019/02/18 08:15
+ * Created by hdgaadd on 2021/12/06/18:25
  */
-public class Generator {
+public class MultiQueryGenerator {
 
     //项目包名
     static String Package = "com.codeman";
 
+    static String day;
+
+    static String time;
+
+    static String template;
 
     public static void main(String[] args) throws Exception {
-        Generator auto = new Generator();
+        String TimeNow = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SS").format(Calendar.getInstance().getTime());
+        String[] str = TimeNow.split(" ");
+        day = str[0];
+        time = str[1].substring(0, 8);
+        template ="/**\n" +
+                " * @author hdgaadd\n" +
+                " * Created on " + day + " " + time +"\n" +  "*/\n";
+
+        MultiQueryGenerator auto = new MultiQueryGenerator();
         //获取所有数据表
         List<String> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
@@ -80,10 +88,7 @@ public class Generator {
     private static String createDao(String tableName) {
         String service = "package "+Package+".mapper;\n\n" +
                 "import org.apache.ibatis.annotations.Mapper;\n" +
-                "\n" +
-                "/**\n" +
-                " * Created by hdgaadd\n" +
-                " */\n" +
+                "\n"  + template +
                 "@Mapper\n" +
                 "public interface "+tableName+"Mapper {\n" +
 
@@ -99,9 +104,7 @@ public class Generator {
     private static String createService(String tableName) {
         String service = "package "+Package+".service;\n" +
                 "\n" +
-                "/**\n" +
-                " * Created by hdgaadd\n" +
-                " */\n" +
+                template +
                 "public interface " + tableName + "Service {\n" +
                 "}";
         return service;
@@ -117,10 +120,7 @@ public class Generator {
                 "\n" +
                 "import "+Package+".service." + tableName + "Service;\n" +
                 "import org.springframework.stereotype.Service;\n" +
-                "\n" +
-                "/**\n" +
-                " * Created by hdgaadd\n" +
-                " */\n" +
+                "\n" + template +
                 "@Service\n" +
                 "public class " + tableName + "ServiceImpl implements " + tableName + "Service {\n" +
                 "}\n";
@@ -136,9 +136,7 @@ public class Generator {
         String controller ="package "+Package+".controller;\n\n" +"import io.swagger.annotations.Api;\n" +
                 "import org.springframework.web.bind.annotation.RequestMapping;\n" +
                 "import org.springframework.web.bind.annotation.RestController;\n\n"+
-                "/**\n" +
-                " * Created by hdgaadd\n" +
-                " */\n" +
+                template +
                 "@Api(tags = \"" + "\")\n" +
                 "@RestController\n" +
                 "@RequestMapping(\"/" + "\")\n" +
