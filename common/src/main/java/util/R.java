@@ -20,15 +20,15 @@ public class R<T> implements Serializable {
     private String message;
 
 
-    public static <T>R<T> ok(T data) {
+    public static <T> R<T> ok(T data) {
         return restResult(CommonConstant.SUCCESS, data, "success");
     }
 
-    public static <T>R<T> fail(T data) {
+    public static <T> R<T> fail(T data) {
         return restResult(CommonConstant.FAIL, data, "fail");
     }
 
-    private static <T>R<T> restResult(Integer code, T data, String msg) {
+    private static <T> R<T> restResult(Integer code, T data, String msg) {
         R<T> r = new R<>();
         r.setCode(code);
         r.setData(data);

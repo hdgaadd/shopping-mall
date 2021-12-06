@@ -1,6 +1,8 @@
 package com.codeman.domain;
 
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -8,8 +10,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class ProjectSubjectRelation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,36 +25,4 @@ public class ProjectSubjectRelation implements Serializable {
     private Long subjectId;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getProjecId() {
-        return projecId;
-    }
-
-    public void setProjecId(Long projecId) {
-        this.projecId = projecId;
-    }
-
-    public Long getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(Long subjectId) {
-        this.subjectId = subjectId;
-    }
-
-    @Override
-    public String toString() {
-        return "ProjectSubjectRelation{" +
-        "id=" + id +
-        ", projecId=" + projecId +
-        ", subjectId=" + subjectId +
-        "}";
-    }
 }

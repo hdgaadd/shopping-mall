@@ -117,7 +117,7 @@ public class CodeGenerator {
         //strategy.setSuperEntityClass("com.sxt.BaseEntity");
 
         //是否启动lombok
-        strategy.setEntityLombokModel(false);
+        strategy.setEntityLombokModel(true);
 
         //是否生成resetController
         strategy.setRestControllerStyle(true);

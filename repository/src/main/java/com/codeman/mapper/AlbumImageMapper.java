@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
 public interface AlbumImageMapper extends BaseMapper<AlbumImage> {
 

@@ -2,6 +2,8 @@ package com.codeman.domain;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -9,8 +11,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class FlashPromotionLog implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,45 +28,4 @@ public class FlashPromotionLog implements Serializable {
     private LocalDateTime sendTime;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public LocalDateTime getSendTime() {
-        return sendTime;
-    }
-
-    public void setSendTime(LocalDateTime sendTime) {
-        this.sendTime = sendTime;
-    }
-
-    @Override
-    public String toString() {
-        return "FlashPromotionLog{" +
-        "id=" + id +
-        ", memberId=" + memberId +
-        ", productId=" + productId +
-        ", sendTime=" + sendTime +
-        "}";
-    }
 }

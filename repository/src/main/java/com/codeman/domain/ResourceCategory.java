@@ -2,6 +2,8 @@ package com.codeman.domain;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -9,8 +11,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class ResourceCategory implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -22,36 +26,4 @@ public class ResourceCategory implements Serializable {
     private LocalDateTime createTime;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        return "ResourceCategory{" +
-        "id=" + id +
-        ", name=" + name +
-        ", createTime=" + createTime +
-        "}";
-    }
 }

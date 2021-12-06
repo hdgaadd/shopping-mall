@@ -1,6 +1,8 @@
 package com.codeman.domain;
 
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -8,8 +10,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class PreferenceAreaProjectRelation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,36 +25,4 @@ public class PreferenceAreaProjectRelation implements Serializable {
     private Long preferenceId;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public Long getPreferenceId() {
-        return preferenceId;
-    }
-
-    public void setPreferenceId(Long preferenceId) {
-        this.preferenceId = preferenceId;
-    }
-
-    @Override
-    public String toString() {
-        return "PreferenceAreaProjectRelation{" +
-        "id=" + id +
-        ", productId=" + productId +
-        ", preferenceId=" + preferenceId +
-        "}";
-    }
 }

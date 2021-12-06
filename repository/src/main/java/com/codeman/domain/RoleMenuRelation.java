@@ -1,6 +1,8 @@
 package com.codeman.domain;
 
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -8,8 +10,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class RoleMenuRelation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,36 +25,4 @@ public class RoleMenuRelation implements Serializable {
     private Long menuId;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
-    public Long getMenuId() {
-        return menuId;
-    }
-
-    public void setMenuId(Long menuId) {
-        this.menuId = menuId;
-    }
-
-    @Override
-    public String toString() {
-        return "RoleMenuRelation{" +
-        "id=" + id +
-        ", roleId=" + roleId +
-        ", menuId=" + menuId +
-        "}";
-    }
 }

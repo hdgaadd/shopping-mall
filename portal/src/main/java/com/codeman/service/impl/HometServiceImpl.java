@@ -32,7 +32,7 @@ public class HometServiceImpl implements HomeService {
         HomeResult homeResult = new HomeResult();
         // 获取秒杀推荐
         homeResult.setHomeFlashPromotion(getHomeFlashPromotion());
-        return null;
+        return homeResult;
     }
 
     private HomeFlashPromotion getHomeFlashPromotion() {

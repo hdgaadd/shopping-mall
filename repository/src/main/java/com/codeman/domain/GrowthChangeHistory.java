@@ -2,6 +2,8 @@ package com.codeman.domain;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -9,8 +11,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class GrowthChangeHistory implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,45 +28,4 @@ public class GrowthChangeHistory implements Serializable {
     private LocalDateTime createTime;
 
 
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Integer getChangeType() {
-        return changeType;
-    }
-
-    public void setChangeType(Integer changeType) {
-        this.changeType = changeType;
-    }
-
-    public Integer getChangeCount() {
-        return changeCount;
-    }
-
-    public void setChangeCount(Integer changeCount) {
-        this.changeCount = changeCount;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        return "GrowthChangeHistory{" +
-        "memberId=" + memberId +
-        ", changeType=" + changeType +
-        ", changeCount=" + changeCount +
-        ", createTime=" + createTime +
-        "}";
-    }
 }

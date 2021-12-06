@@ -1,6 +1,8 @@
 package com.codeman.domain;
 
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -8,8 +10,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class Adress implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,54 +29,4 @@ public class Adress implements Serializable {
     private String detailAdress;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Integer getDefaultSendStatus() {
-        return defaultSendStatus;
-    }
-
-    public void setDefaultSendStatus(Integer defaultSendStatus) {
-        this.defaultSendStatus = defaultSendStatus;
-    }
-
-    public Integer getDefaultReceiveStatus() {
-        return defaultReceiveStatus;
-    }
-
-    public void setDefaultReceiveStatus(Integer defaultReceiveStatus) {
-        this.defaultReceiveStatus = defaultReceiveStatus;
-    }
-
-    public String getDetailAdress() {
-        return detailAdress;
-    }
-
-    public void setDetailAdress(String detailAdress) {
-        this.detailAdress = detailAdress;
-    }
-
-    @Override
-    public String toString() {
-        return "Adress{" +
-        "id=" + id +
-        ", memberId=" + memberId +
-        ", defaultSendStatus=" + defaultSendStatus +
-        ", defaultReceiveStatus=" + defaultReceiveStatus +
-        ", detailAdress=" + detailAdress +
-        "}";
-    }
 }

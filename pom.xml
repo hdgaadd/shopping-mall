@@ -4,7 +4,6 @@
 	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
-		<module>cutedoudou</module>
         <module>template</module>
 		<module>util</module>
 		<module>repository</module>
@@ -43,8 +42,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
+			<artifactId>spring-boot-starter-Generator</artifactId>
+			<scope>Generator</scope>
 		</dependency>
 		<!-- springboot-web -->
 		<dependency>
@@ -73,7 +72,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
+			<scope>Generator</scope>
 		</dependency>
 		<!--swagger-ui-->
 		<dependency>

@@ -2,6 +2,8 @@ package com.codeman.domain;
 
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -9,8 +11,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class OrderReturnApply implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -30,72 +34,4 @@ public class OrderReturnApply implements Serializable {
     private LocalDateTime createTime;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
-
-    public Long getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(Long memberId) {
-        this.memberId = memberId;
-    }
-
-    public Long getReasonId() {
-        return reasonId;
-    }
-
-    public void setReasonId(Long reasonId) {
-        this.reasonId = reasonId;
-    }
-
-    public String getReasonContent() {
-        return reasonContent;
-    }
-
-    public void setReasonContent(String reasonContent) {
-        this.reasonContent = reasonContent;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        return "OrderReturnApply{" +
-        "id=" + id +
-        ", orderId=" + orderId +
-        ", memberId=" + memberId +
-        ", reasonId=" + reasonId +
-        ", reasonContent=" + reasonContent +
-        ", note=" + note +
-        ", createTime=" + createTime +
-        "}";
-    }
 }

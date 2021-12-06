@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="template" />
-        <module name="cutedoudou" />
         <module name="repository" />
         <module name="util" />
         <module name="portal" />

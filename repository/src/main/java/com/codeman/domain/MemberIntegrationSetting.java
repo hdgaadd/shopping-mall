@@ -1,6 +1,8 @@
 package com.codeman.domain;
 
 import java.io.Serializable;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * <p>
@@ -8,8 +10,10 @@ import java.io.Serializable;
  * </p>
  *
  * @author hdgaadd
- * @since 2021-12-04
+ * @since 2021-12-06
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class MemberIntegrationSetting implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,36 +25,4 @@ public class MemberIntegrationSetting implements Serializable {
     private Integer count;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getContinueDayCount() {
-        return continueDayCount;
-    }
-
-    public void setContinueDayCount(Integer continueDayCount) {
-        this.continueDayCount = continueDayCount;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    @Override
-    public String toString() {
-        return "MemberIntegrationSetting{" +
-        "id=" + id +
-        ", continueDayCount=" + continueDayCount +
-        ", count=" + count +
-        "}";
-    }
 }
