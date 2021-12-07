@@ -20,8 +20,6 @@ public class Brand implements Serializable {
 
     private Long id;
 
-    private Long productId;
-
     private String name;
 
     private Integer productCount;
