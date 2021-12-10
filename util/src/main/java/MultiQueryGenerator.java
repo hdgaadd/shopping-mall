@@ -173,7 +173,7 @@ public class MultiQueryGenerator {
         //创建Dao
         createFile(new File(url + "mapper\\" + tableName + "Mapper.java"), createDao(tableName));
         //创建Service
-        createFile(new File(url + "service\\" + tableName + "Service.java"), createService(tableName));
+        createFile(new File(url + "service\\" + "I" + tableName + "Service.java"), createService(tableName));
         //创建ServiceImpl
         createFile(new File(url + "service\\impl\\" + tableName + "ServiceImpl.java"), createServiceImpl(tableName));
         //创建Controller

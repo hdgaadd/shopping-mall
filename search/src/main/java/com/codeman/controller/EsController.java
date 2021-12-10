@@ -2,6 +2,7 @@ package com.codeman.controller;
 
 import com.codeman.service.EsService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ public class EsController {
     @Resource
     private EsService esService;
 
+    @ApiOperation("导入商品到ElasticSearch")
     @GetMapping("/importAll")
     public R<Integer> importAll(Integer id){
         int count = esService.importAll(id);

@@ -1,14 +1,11 @@
 package com.codeman.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.codeman.domain.Brand;
 import com.codeman.domain.Product;
 import com.codeman.entity.CommonPage;
-import com.codeman.mapper.BrandMapper;
 import com.codeman.mapper.ProductMapper;
 import com.codeman.service.BrandService;
 import com.github.pagehelper.PageHelper;
-import org.springframework.boot.autoconfigure.web.ConditionalOnEnabledResourceChain;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

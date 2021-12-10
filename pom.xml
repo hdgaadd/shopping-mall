@@ -9,6 +9,7 @@
 		<module>repository</module>
         <module>portal</module>
         <module>common</module>
+        <module>search</module>
     </modules>
 
 	<parent>

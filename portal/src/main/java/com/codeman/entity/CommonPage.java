@@ -1,8 +1,6 @@
 package com.codeman.entity;
 
-import com.codeman.domain.Brand;
 import com.github.pagehelper.PageInfo;
-import io.swagger.models.auth.In;
 
 import java.util.List;
 
@@ -14,7 +12,7 @@ public class CommonPage<T> {
 
     private Integer pageNum;
 
-    private Integer pageSize;
+    private Integer pageSize; // 每页数量
 
     private Long totalCount;
 
