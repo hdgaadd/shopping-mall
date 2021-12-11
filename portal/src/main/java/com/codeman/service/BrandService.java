@@ -1,6 +1,5 @@
 package com.codeman.service;
 
-import com.codeman.domain.Brand;
 import com.codeman.domain.Product;
 import com.codeman.entity.CommonPage;
 

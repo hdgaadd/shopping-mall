@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  * Created by hdgaadd on 2021/12/06/18:25
  */
-public class MultiQueryGenerator {
+public class DaoMultiQueryGenerator {
 
     //项目包名
     static String Package = "com.codeman";
@@ -30,7 +30,7 @@ public class MultiQueryGenerator {
                 " * @author hdgaadd\n" +
                 " * Created on " + day + " " + time +"\n" +  "*/\n";
 
-        MultiQueryGenerator auto = new MultiQueryGenerator();
+        DaoMultiQueryGenerator auto = new DaoMultiQueryGenerator();
         //获取所有数据表
         List<String> list = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
@@ -86,11 +86,11 @@ public class MultiQueryGenerator {
      * 创建Dao
      */
     private static String createDao(String tableName) {
-        String service = "package "+Package+".mapper;\n\n" +
+        String service = "package "+Package+".dao;\n\n" +
                 "import org.apache.ibatis.annotations.Mapper;\n" +
                 "\n"  + template +
                 "@Mapper\n" +
-                "public interface "+tableName+"Mapper {\n" +
+                "public interface "+tableName+"Dao {\n" +
 
                 "}";
         return service;
@@ -153,7 +153,7 @@ public class MultiQueryGenerator {
         String controller =
                 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
                         "<!DOCTYPE mapper PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\" \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n" +
-                        "<mapper namespace=\"com.codeman.mapper." + tableName +"Mapper\">\n" +
+                        "<mapper namespace=\"com.codeman.dao." + tableName +"Dao\">\n" +
                         "</mapper>";
         return controller;
     }
@@ -171,15 +171,15 @@ public class MultiQueryGenerator {
         String moduleName = sc.nextLine();
         String url = baseUrl +  "\\" + moduleName + "\\src\\main\\java\\com\\codeman\\";
         //创建Dao
-        createFile(new File(url + "mapper\\" + tableName + "Mapper.java"), createDao(tableName));
+        createFile(new File(url + "dao\\" + tableName + "Dao.java"), createDao(tableName));
         //创建Service
-        createFile(new File(url + "service\\" + "I" + tableName + "Service.java"), createService(tableName));
+        createFile(new File(url + "service\\" + tableName + "Service.java"), createService(tableName));
         //创建ServiceImpl
         createFile(new File(url + "service\\impl\\" + tableName + "ServiceImpl.java"), createServiceImpl(tableName));
         //创建Controller
         createFile(new File(url + "controller\\" + tableName + "Controller.java"), createController(tableName));
         // 创建Mapper.xml
-        createFile(new File(baseUrl + "\\" + moduleName + "\\src\\main\\resources\\" + "mapper\\" + tableName + "Mapper.xml"), createXml(tableName));
+        createFile(new File(baseUrl + "\\" + moduleName + "\\src\\main\\resources\\" + "dao\\" + tableName + "Dao.xml"), createXml(tableName));
     }
 
     /**
