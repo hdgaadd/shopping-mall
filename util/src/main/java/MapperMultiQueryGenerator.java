@@ -28,7 +28,7 @@ public class MapperMultiQueryGenerator {
         time = str[1].substring(0, 8);
         template ="/**\n" +
                 " * @author hdgaadd\n" +
-                " * Created on " + day + " " + time +"\n" +  "*/\n";
+                " * Created on " + day +"\n" +  "*/\n";
 
         MapperMultiQueryGenerator auto = new MapperMultiQueryGenerator();
         //获取所有数据表
@@ -87,9 +87,7 @@ public class MapperMultiQueryGenerator {
      */
     private static String createDao(String tableName) {
         String service = "package "+Package+".mapper;\n\n" +
-                "import org.apache.ibatis.annotations.Mapper;\n" +
-                "\n"  + template +
-                "@Mapper\n" +
+                template +
                 "public interface "+tableName+"Mapper {\n" +
 
                 "}";

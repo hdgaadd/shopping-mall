@@ -1,6 +1,10 @@
 package com.codeman.dao;
 
+import com.codeman.entity.CouponDetail;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author hdgaadd
@@ -8,4 +12,5 @@ import org.apache.ibatis.annotations.Mapper;
 */
 @Mapper
 public interface MemberCouponDao {
+    List<CouponDetail> getAllCoupon(@Param("id") Long id);
 }

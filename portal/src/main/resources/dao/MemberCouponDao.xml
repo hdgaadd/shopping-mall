@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codeman.dao.MemberCouponDao">
+
+    <resultMap id = "couponDetailMap" type="com.codeman.entity.CouponDetail">
+        <association property="coupons" resultMap="couponMap">
+        </association>
+        <association property ="couponProductRelations" resultMap="couponProductRelationMap">
+        </association>
+        <association property ="couponProductCategoryRelations" resultMap="couponProductCategoryRelationMap">
+        </association>
+    </resultMap>
+    <resultMap id="couponMap" type="com.codeman.domain.Coupon">
+        <result property="id" column="id"/>
+        <result property="type" column="type"/>
+        <result property="name" column="name"/>
+        <result property="count" column="count"/>
+        <result property="amount" column="amount"/>
+        <result property="couponLimit" column="couponLimit"/>
+        <result property="startTime" column="startTime"/>
+        <result property="endTime" column="endTime"/>
+    </resultMap>
+    <resultMap id="couponProductRelationMap" type="com.codeman.domain.CouponProductRelation">
+        <result property="id" column="id"/>
+        <result property="couponId" column="couponId"/>
+        <result property="productId" column="productId"/>
+    </resultMap>
+    <resultMap id="couponProductCategoryRelationMap" type="com.codeman.domain.CouponProductCategoryRelation">
+        <result property="id" column="id"/>
+        <result property="couponId" column="couponId"/>
+        <result property="productCategoryId" column="productCategoryId"/>
+    </resultMap>
+    <select id="getAllCoupon" resultMap="couponDetailMap">
+        SELECT DISTINCT
+            c.id,
+            c.type,
+            c.`name`,
+            c.count,
+            c.amount,
+            c.coupon_limit,
+            c.start_time,
+            c.end_time,
+            cp.id,
+            cp.coupon_id,
+            cp.product_id,
+            cpr.id,
+            cpr.coupon_id,
+            cpr.product_category_id
+        FROM
+            coupon_history AS ch
+                LEFT JOIN coupon AS c ON ch.coupon_id = c.id
+                LEFT JOIN coupon_product_relation AS cp ON cp.coupon_id = c.id
+                LEFT JOIN coupon_product_category_relation AS cpr ON cpr.coupon_id = c.id
+        WHERE
+            ch.member_id = #{id}
+    </select>
+</mapper>

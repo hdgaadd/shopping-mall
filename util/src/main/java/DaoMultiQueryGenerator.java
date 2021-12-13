@@ -28,7 +28,7 @@ public class DaoMultiQueryGenerator {
         time = str[1].substring(0, 8);
         template ="/**\n" +
                 " * @author hdgaadd\n" +
-                " * Created on " + day + " " + time +"\n" +  "*/\n";
+                " * Created on " + day +"\n" +  "*/\n";
 
         DaoMultiQueryGenerator auto = new DaoMultiQueryGenerator();
         //获取所有数据表
@@ -87,9 +87,7 @@ public class DaoMultiQueryGenerator {
      */
     private static String createDao(String tableName) {
         String service = "package "+Package+".dao;\n\n" +
-                "import org.apache.ibatis.annotations.Mapper;\n" +
-                "\n"  + template +
-                "@Mapper\n" +
+                template +
                 "public interface "+tableName+"Dao {\n" +
 
                 "}";

@@ -1,5 +1,6 @@
 package com.codeman.domain;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
@@ -27,7 +28,7 @@ public class Coupon implements Serializable {
 
     private Integer count;
 
-    private Integer amount;
+    private BigDecimal amount;
 
     private Integer couponLimit;
 

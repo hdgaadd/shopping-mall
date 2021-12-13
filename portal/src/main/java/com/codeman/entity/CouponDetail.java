@@ -17,4 +17,28 @@ public class CouponDetail {
     private List<CouponProductRelation> couponProductRelations;
 
     private List<CouponProductCategoryRelation> couponProductCategoryRelations;
+
+    public Coupon getCoupons() {
+        return coupons;
+    }
+
+    public void setCoupons(Coupon coupons) {
+        this.coupons = coupons;
+    }
+
+    public List<CouponProductRelation> getCouponProductRelations() {
+        return couponProductRelations;
+    }
+
+    public void setCouponProductRelations(List<CouponProductRelation> couponProductRelations) {
+        this.couponProductRelations = couponProductRelations;
+    }
+
+    public List<CouponProductCategoryRelation> getCouponProductCategoryRelations() {
+        return couponProductCategoryRelations;
+    }
+
+    public void setCouponProductCategoryRelations(List<CouponProductCategoryRelation> couponProductCategoryRelations) {
+        this.couponProductCategoryRelations = couponProductCategoryRelations;
+    }
 }

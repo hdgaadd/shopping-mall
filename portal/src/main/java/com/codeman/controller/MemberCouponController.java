@@ -31,10 +31,10 @@ public class MemberCouponController {
     @Resource
     private CartItemService cartItemService;
 
-    @GetMapping("/coupon/{tye}")
-    public R<List<CouponDetail>> listCart(@PathVariable String tyep) {
+    @GetMapping("/coupon/{type}")
+    public R<List<CouponDetail>> listCart(@PathVariable String type) {
         List<Cart> carts = cartItemService.getAllCart(memberService.getCurrentMember().getId(), null);
-        List<CouponDetail> couponDetails = memberCouponService.listCart(carts, tyep);
+        List<CouponDetail> couponDetails = memberCouponService.listCart(carts, type);
         return R.ok(couponDetails);
     }
 }
