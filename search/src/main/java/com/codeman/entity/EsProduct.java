@@ -1,7 +1,5 @@
 package com.codeman.entity;
 
-import com.codeman.domain.ProdcuctCategoryAttributeRelation;
-import com.codeman.domain.Product;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;

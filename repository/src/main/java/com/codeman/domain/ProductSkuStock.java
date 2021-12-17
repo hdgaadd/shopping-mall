@@ -23,7 +23,7 @@ public class ProductSkuStock implements Serializable {
 
     private Long productId;
 
-    private Integer skuCode;
+    private String skuCode;
 
     private BigDecimal price;
 
@@ -31,7 +31,7 @@ public class ProductSkuStock implements Serializable {
 
     private Integer sale;
 
-    private Integer sock;
+    private Integer stock;
 
     private Integer lowStock;
 
