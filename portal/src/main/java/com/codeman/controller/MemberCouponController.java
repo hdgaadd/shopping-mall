@@ -1,6 +1,7 @@
 package com.codeman.controller;
 
 import com.codeman.domain.Cart;
+import com.codeman.domain.Coupon;
 import com.codeman.entity.CouponDetail;
 import com.codeman.service.CartItemService;
 import com.codeman.service.MemberCouponService;
@@ -40,5 +41,16 @@ public class MemberCouponController {
     @PostMapping("/addCoupon/{couponId}")
     public CommonResult addCoupon(@PathVariable Long couponId) {
         return memberCouponService.addCoupon(couponId);
+    }
+
+    // 获取用户优惠券领取历史记录
+
+    // 根据用户优惠券领取历史记录表，获取用户拥有的优惠券
+
+    @ApiOperation("获取当前商品的相关优惠券")
+    @GetMapping("/couponsByProductId/{productId}")
+    public CommonResult<List<Coupon>> couponsByProductId(@PathVariable Long productId) {
+        List<Coupon> coupons = memberCouponService.couponsByProductId(productId);
+        return CommonResult.success(coupons);
     }
 }

@@ -3,13 +3,9 @@ package com.codeman.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.codeman.constant.CouponType;
 import com.codeman.dao.MemberCouponDao;
-import com.codeman.domain.Cart;
-import com.codeman.domain.Coupon;
-import com.codeman.domain.CouponHistory;
-import com.codeman.domain.Member;
+import com.codeman.domain.*;
 import com.codeman.entity.CouponDetail;
-import com.codeman.mapper.CouponHistoryMapper;
-import com.codeman.mapper.CouponMapper;
+import com.codeman.mapper.*;
 import com.codeman.service.MemberCouponService;
 import com.codeman.service.MemberService;
 import exception.Asserts;
@@ -20,8 +16,10 @@ import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @author hdgaadd
@@ -37,6 +35,12 @@ public class MemberCouponServiceImpl implements MemberCouponService {
     private CouponMapper  couponMapper;
     @Resource
     private CouponHistoryMapper couponHistoryMapper;
+    @Resource
+    private CouponProductRelationMapper couponProductRelationMapper;
+    @Resource
+    private CouponProductCategoryRelationMapper couponProductCategoryRelationMapper;
+    @Resource
+    private ProductMapper productMapper;
 
     @Override
     public List<CouponDetail> listCart(List<Cart> carts, String type) {
@@ -93,6 +97,42 @@ public class MemberCouponServiceImpl implements MemberCouponService {
         coupon.setCount(coupon.getCount() - 1);
         couponMapper.updateById(coupon);
         return CommonResult.success(null);
+    }
+
+    @Override
+    public List<Coupon> couponsByProductId(Long productId) {
+        List<Long> couponIds = new ArrayList<>();
+        // 根据商品id获取商品id与优惠券记录表
+        QueryWrapper<CouponProductRelation> couponProductRelationQueryWrapper = new QueryWrapper<>();
+        couponProductRelationQueryWrapper.eq("product_id", productId);
+        List<CouponProductRelation> couponProductRelations = couponProductRelationMapper.selectList(couponProductRelationQueryWrapper);
+        if (!couponProductRelations.isEmpty()) {
+            List<Long> listCouponId = couponProductRelations.stream().map(CouponProductRelation :: getCouponId).collect(Collectors.toList());
+            couponIds.addAll(listCouponId);
+        }
+
+        // 查询商品的分类id
+        Product product = productMapper.selectById(productId);
+        Long productCategoryId = product.getProductCategoryId();
+
+        // 根据商品id获取商品分类id与优惠券记录表
+        QueryWrapper<CouponProductCategoryRelation> couponProductCategoryRelationQueryWrapper = new QueryWrapper<>();
+        couponProductCategoryRelationQueryWrapper.eq("product_category_id", productCategoryId);
+        List<CouponProductCategoryRelation> couponProductCategoryRelations = couponProductCategoryRelationMapper.selectList(couponProductCategoryRelationQueryWrapper);
+        if (!couponProductCategoryRelations.isEmpty()) {
+            List<Long> listCouponId = couponProductCategoryRelations.stream().map(CouponProductCategoryRelation :: getCouponId).collect(Collectors.toList());
+            couponIds.addAll(listCouponId);
+        }
+        // 根据优惠券id获取优惠券
+        List<Coupon> coupons = new ArrayList<>();
+        LocalDateTime now = LocalDateTime.now();
+        for (Long id : couponIds) {
+            QueryWrapper<Coupon> couponQueryWrapper = new QueryWrapper<>();
+            couponQueryWrapper.eq("id", id).le("start_time", now);
+            Coupon coupon = couponMapper.selectOne(couponQueryWrapper);
+            coupons.add(coupon);
+        }
+        return coupons;
     }
 
     private BigDecimal getTotalAmout(List<Cart> carts) {

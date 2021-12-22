@@ -1,6 +1,7 @@
 package com.codeman.service;
 
 import com.codeman.domain.Cart;
+import com.codeman.domain.Coupon;
 import com.codeman.entity.CouponDetail;
 import util.CommonResult;
 
@@ -21,4 +22,10 @@ public interface MemberCouponService {
      * @param couponId
      */
     CommonResult addCoupon(Long couponId);
+
+    /**'
+     * 获取当前商品的相关优惠券
+     * @return
+     */
+    List<Coupon> couponsByProductId(Long productId);
 }
