@@ -1,6 +1,5 @@
 package com.codeman.controller;
 
-import com.codeman.domain.Brand;
 import com.codeman.domain.Product;
 import com.codeman.entity.CommonPage;
 import com.codeman.service.BrandService;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import util.R;
+import util.CommonResult;
 
 import javax.annotation.Resource;
 
@@ -28,10 +27,10 @@ public class BrandController {
 
     @ApiOperation("分页获取品牌所有商品")
     @GetMapping("/projectList")
-    public R<CommonPage<Product>> getProjectList(@RequestParam Long brandId,
-                                               @RequestParam(value = "pageNum", defaultValue = "1")Integer pageNum,
-                                               @RequestParam(value = "pageSize", defaultValue = "2") Integer pageSize){
+    public CommonResult<CommonPage<Product>> getProjectList(@RequestParam Long brandId,
+                                                            @RequestParam(value = "pageNum", defaultValue = "1")Integer pageNum,
+                                                            @RequestParam(value = "pageSize", defaultValue = "2") Integer pageSize){
         CommonPage<Product> result = brandService.getBrandById(brandId, pageNum, pageSize);
-        return R.ok(result);
+        return CommonResult.success(result);
     }
 }

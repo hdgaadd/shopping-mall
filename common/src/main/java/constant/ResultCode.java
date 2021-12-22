@@ -1,10 +1,12 @@
 package constant;
 
-//成败信息类型2
+/**
+ * @author hdgaadd
+ * Created on 2021/12/13
+ */
 public enum ResultCode {
-    SUCCESS(1, "successful"),
-    FAIL(0, "fail");
-
+    SUCCESS(200, "operate successful"),
+    FAILED(500, "operation failure");
     private final long code;
     private final String message;
 

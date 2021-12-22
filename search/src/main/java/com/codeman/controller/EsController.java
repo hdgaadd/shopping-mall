@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import util.R;
+import util.CommonResult;
 
 import javax.annotation.Resource;
 
@@ -23,9 +23,9 @@ public class EsController {
 
     @ApiOperation("导入商品到ElasticSearch")
     @GetMapping("/importAll")
-    public R<Integer> importAll(Integer id){
+    public CommonResult<Integer> importAll(Integer id){
         int count = esService.importAll(id);
         System.out.println(count);
-        return R.ok(count);
+        return CommonResult.success(count);
     }
 }

@@ -2,6 +2,7 @@ package com.codeman.service;
 
 import com.codeman.domain.Cart;
 import com.codeman.entity.CouponDetail;
+import util.CommonResult;
 
 import java.util.List;
 
@@ -15,5 +16,9 @@ public interface MemberCouponService {
      */
     List<CouponDetail> listCart(List<Cart> carts, String tyep);
 
-
+    /**
+     * 领取指定优惠券
+     * @param couponId
+     */
+    CommonResult addCoupon(Long couponId);
 }

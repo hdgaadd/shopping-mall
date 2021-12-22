@@ -6,11 +6,9 @@ import com.codeman.service.CartItemService;
 import com.codeman.service.MemberCouponService;
 import com.codeman.service.MemberService;
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import util.R;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
+import util.CommonResult;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -23,7 +21,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/member")
 public class MemberCouponController {
-
     @Resource
     private MemberCouponService memberCouponService;
     @Resource
@@ -31,10 +28,17 @@ public class MemberCouponController {
     @Resource
     private CartItemService cartItemService;
 
+    @ApiOperation("获取用户购物车的所有优惠券")
     @GetMapping("/coupon/{type}")
-    public R<List<CouponDetail>> listCart(@PathVariable String type) {
+    public CommonResult<List<CouponDetail>> listCart(@PathVariable String type) {
         List<Cart> carts = cartItemService.getAllCart(memberService.getCurrentMember().getId(), null);
         List<CouponDetail> couponDetails = memberCouponService.listCart(carts, type);
-        return R.ok(couponDetails);
+        return CommonResult.success(couponDetails);
+    }
+
+    @ApiOperation("领取指定优惠券")
+    @PostMapping("/addCoupon/{couponId}")
+    public CommonResult addCoupon(@PathVariable Long couponId) {
+        return memberCouponService.addCoupon(couponId);
     }
 }

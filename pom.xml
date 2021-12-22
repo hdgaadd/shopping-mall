@@ -20,9 +20,9 @@
 	</parent>
 
 	<groupId>com.codeman</groupId>
-	<artifactId>shopping_mall</artifactId>
+	<artifactId>shopping-mall</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>relax</name>
+	<name>shopping-mall</name>
 	<description>YouAreCute</description>
 
 	<properties>

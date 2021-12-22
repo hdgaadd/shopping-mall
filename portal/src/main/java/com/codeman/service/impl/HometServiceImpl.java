@@ -1,31 +1,37 @@
 package com.codeman.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.codeman.dao.HomeDao;
 import com.codeman.domain.FlashPromotion;
 import com.codeman.domain.FlashPromotionSession;
 import com.codeman.domain.Product;
+import com.codeman.domain.Subject;
 import com.codeman.entity.HomeFlashPromotion;
 import com.codeman.entity.HomeResult;
 import com.codeman.mapper.FlashPromotionMapper;
 import com.codeman.mapper.FlashPromotionSessionMapper;
 import com.codeman.mapper.ProductMapper;
+import com.codeman.mapper.SubjectMapper;
 import com.codeman.service.HomeService;
+import com.github.pagehelper.PageHelper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
+import util.LOG;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
 public class HometServiceImpl implements HomeService {
 
     private FlashPromotionMapper flashPromotionMapper;
-
     private FlashPromotionSessionMapper flashPromotionSessionMapper;
-
     private ProductMapper productMapper;
+    private SubjectMapper subjectMapper;
+    private HomeDao homeDao;
 
     @Override
     public HomeResult content() {
@@ -33,6 +39,26 @@ public class HometServiceImpl implements HomeService {
         // 获取秒杀推荐
         homeResult.setHomeFlashPromotion(getHomeFlashPromotion());
         return homeResult;
+    }
+
+    @Override
+    public List<Subject> getSubjectList(Long cateId, Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        if (Objects.isNull(cateId)) {
+            LOG.log("cateId是空的");
+            return null;
+        }
+        QueryWrapper<Subject> subjectQueryWrapper = new QueryWrapper<>();
+        subjectQueryWrapper.eq("category_id", cateId).eq("show_status", 1);
+        List<Subject> subjects = subjectMapper.selectList(subjectQueryWrapper);
+        return subjects;
+    }
+
+    @Override
+    public List<Product> getHotProjectList(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<Product> products = homeDao.getHotProjectList();
+        return products;
     }
 
     private HomeFlashPromotion getHomeFlashPromotion() {
