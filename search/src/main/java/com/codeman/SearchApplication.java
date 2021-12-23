@@ -8,10 +8,10 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 @SpringBootApplication
 @EnableOpenApi
 @MapperScan({"com.codeman.mapper", "com.codeman.dao"})
-public class RelaxApplication {
+public class SearchApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RelaxApplication.class, args);
+		SpringApplication.run(SearchApplication.class, args);
 	}
 
 }

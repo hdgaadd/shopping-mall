@@ -11,5 +11,5 @@ import java.util.List;
 */
 @Mapper
 public interface EsMapper {
-    List<EsProduct> selectAll(Integer id);
+    List<EsProduct> selectAll();
 }

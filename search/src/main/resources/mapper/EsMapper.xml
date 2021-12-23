@@ -21,6 +21,5 @@
                 LEFT JOIN product_attribute_relation ON product_attribute_relation.product_id = product.id
                 LEFT JOIN product_attribute ON product_attribute_relation.attribute_id = product_attribute.id
 
-       <if test="id != null"> WHERE product.id = #{id}</if>
     </select>
 </mapper>
