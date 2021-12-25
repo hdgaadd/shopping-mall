@@ -54,13 +54,17 @@ public class EsServiceImpl implements EsService {
 
     @Override
     public List<EsProduct> selectMatch(String key, String value) throws IOException {
+        // 实例化SearchRequest、SearchSourceBuilder
         SearchRequest searchRequest = new SearchRequest();
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        // 添加key
         searchSourceBuilder.query(QueryBuilders.matchQuery(key, value));
-
+        // 把SearchSourceBuilder添加进SearchRequest
         searchRequest.source(searchSourceBuilder);
+        // 查询，返回SearchResponse
         SearchResponse response = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
 
+        // 把SearchResponse转换为EsProduct
         List<EsProduct> esProducts = new ArrayList<>();
         SearchHit[] hits = response.getHits().getHits();
         for (SearchHit hit : hits) {

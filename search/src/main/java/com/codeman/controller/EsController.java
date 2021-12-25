@@ -24,11 +24,9 @@ public class EsController {
 
     @ApiOperation("导入商品到ElasticSearch")
     @GetMapping("/importAll")
-    public CommonResult<Integer> importAll() {
-
+    public CommonResult<String> importAll() {
         int count = esService.importAll();
-        System.out.println(count);
-        return CommonResult.success(count);
+        return CommonResult.success("导入的商品数量为：" + count);
     }
 
     @ApiOperation("ik分词器查询")
