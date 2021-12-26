@@ -38,4 +38,6 @@ public class MenuController {
         List<MenuNode> menuNodes = menuService.treeMenus();
         return CommonResult.success(menuNodes);
     }
+
+   // updateHidden(Long id, Integer hiddenStatus) 修改菜单隐藏状态
 }

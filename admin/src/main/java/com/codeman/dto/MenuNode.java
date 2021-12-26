@@ -1,6 +1,5 @@
 package com.codeman.dto;
 
-
 import com.codeman.domain.Menu;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
