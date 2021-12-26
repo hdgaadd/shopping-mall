@@ -11,11 +11,13 @@
         <module name="common" />
         <module name="template" />
         <module name="util" />
+        <module name="admin" />
         <module name="repository" />
         <module name="portal" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="admin" target="1.8" />
       <module name="common" target="8" />
       <module name="cutedoudou" target="1.8" />
       <module name="portal" target="8" />
@@ -28,6 +30,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="cutedoudou" options="-parameters" />
       <module name="portal" options="-parameters" />

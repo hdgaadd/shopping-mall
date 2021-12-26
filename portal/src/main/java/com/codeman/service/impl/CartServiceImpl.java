@@ -6,14 +6,10 @@ import com.codeman.domain.Member;
 import com.codeman.mapper.CartMapper;
 import com.codeman.service.CartService;
 import com.codeman.service.MemberService;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.time.LocalDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * @author hdgaadd
