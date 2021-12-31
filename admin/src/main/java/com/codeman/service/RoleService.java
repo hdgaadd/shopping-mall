@@ -15,4 +15,5 @@ public interface RoleService {
      * @return
      */
     List<Menu> listMenu(Long roleId);
+
 }

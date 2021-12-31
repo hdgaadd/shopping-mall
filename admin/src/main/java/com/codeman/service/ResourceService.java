@@ -12,11 +12,11 @@ public interface ResourceService {
     /**
      * 分页模糊查询后台资源
      * @param categoryId
-     * @param naemKeyword
+     * @param nameKeyword
      * @param urlKeyword
      * @param pageNum
      * @param pageSize
      * @return
      */
-    List<Resource> list(Long categoryId, String naemKeyword, String urlKeyword, Integer pageNum, Integer pageSize);
+    List<Resource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageNum, Integer pageSize);
 }

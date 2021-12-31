@@ -1,11 +1,11 @@
 package com.codeman.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.codeman.domain.*;
+import com.codeman.mapper.*;
 import com.codeman.constant.CouponType;
 import com.codeman.dao.MemberCouponDao;
-import com.codeman.domain.*;
 import com.codeman.entity.CouponDetail;
-import com.codeman.mapper.*;
 import com.codeman.service.MemberCouponService;
 import com.codeman.service.MemberService;
 import exception.Asserts;
@@ -16,7 +16,6 @@ import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -32,7 +31,7 @@ public class MemberCouponServiceImpl implements MemberCouponService {
     @Resource
     private MemberService memberService;
     @Resource
-    private CouponMapper  couponMapper;
+    private CouponMapper couponMapper;
     @Resource
     private CouponHistoryMapper couponHistoryMapper;
     @Resource

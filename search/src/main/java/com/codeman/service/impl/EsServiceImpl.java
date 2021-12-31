@@ -1,13 +1,11 @@
 package com.codeman.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
-import com.codeman.domain.Product;
 import com.codeman.entity.EsProduct;
 import com.codeman.mapper.EsMapper;
 import com.codeman.mapper.ProductMapper;
 import com.codeman.repository.EsProductRepository;
 import com.codeman.service.EsService;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;

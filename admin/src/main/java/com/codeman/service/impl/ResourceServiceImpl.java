@@ -17,9 +17,9 @@ public class ResourceServiceImpl implements ResourceService {
     @javax.annotation.Resource
     private ResourceMapper resourceMapper;
     @Override
-    public List<Resource> list(Long categoryId, String naemKeyword, String urlKeyword, Integer pageNum, Integer pageSize) {
+    public List<Resource> list(Long categoryId, String nameKeyword, String urlKeyword, Integer pageNum, Integer pageSize) {
         QueryWrapper<Resource> resourceQueryWrapper = new QueryWrapper<>();
-        resourceQueryWrapper.eq("category_id", categoryId).like("name", naemKeyword).like("url", urlKeyword);
+        resourceQueryWrapper.eq("category_id", categoryId).like("name", nameKeyword).like("url", urlKeyword);
         List<Resource> resources = resourceMapper.selectList(resourceQueryWrapper);
         return resources;
     }

@@ -22,26 +22,26 @@ public class EsProduct{
 
     @Field(type = FieldType.Text)
     private String name;
-
+    @Field(type = FieldType.Keyword)
     private String icon;
-
+    @Field(type = FieldType.Keyword)
     private Long productCategoryId;
-
+    @Field(type = FieldType.Keyword)
     private Long productAttributeCategoryId;
-
+    @Field(type = FieldType.Keyword)
     private Long brandId;
-
+    @Field(type = FieldType.Keyword)
     private Long feightTemplateId;
-
+    @Field(type = FieldType.Keyword)
     private BigDecimal price;
-
+    @Field(type = FieldType.Keyword)
     private BigDecimal weight;
-
+    @Field(type = FieldType.Keyword)
     private Integer sort;
-
+    @Field(type = FieldType.Keyword)
     private Integer sale;
-
+    @Field(type = FieldType.Keyword)
     private Integer status;
-
+    @Field(type = FieldType.Keyword)
     private String attributeName;
 }

@@ -55,11 +55,10 @@
 			<artifactId>mybatis-plus-boot-starter</artifactId>
 			<version>3.4.1</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.16.6</version>
+			<version>1.18.20</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
@@ -100,10 +99,10 @@
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin>
+			<!--<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			</plugin>-->
 		</plugins>
 
 		<!--生产xml-->

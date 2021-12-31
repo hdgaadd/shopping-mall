@@ -5,13 +5,12 @@ import com.codeman.entity.CommonPage;
 import com.codeman.service.BrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import util.CommonResult;
-
-import javax.annotation.Resource;
 
 /**
  * @author hdgaadd
@@ -22,8 +21,12 @@ import javax.annotation.Resource;
 @RequestMapping("/brand")
 public class BrandController {
 
-    @Resource
+    @Autowired
     private BrandService brandService;
+
+    // recommendList(Integer pageNum, Integer pageSize) 分页获取推荐品牌
+
+    // getItem(Long id) 获取品牌详情
 
     @ApiOperation("分页获取品牌所有商品")
     @GetMapping("/projectList")

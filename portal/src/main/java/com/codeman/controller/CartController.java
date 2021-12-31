@@ -29,4 +29,8 @@ public class CartController {
         int count = cartService.addCart(cart);
         return count >=1 ? CommonResult.success(count) : CommonResult.failed(count);
     }
+
+    // listCart() 获取用户的购物车列表
+
+
 }
