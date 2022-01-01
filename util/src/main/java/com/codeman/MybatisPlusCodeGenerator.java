@@ -46,6 +46,9 @@ public class MybatisPlusCodeGenerator {
         // 是maven项目的结构，就是工程目录 + /src/main/java
         gc.setOutputDir(projectPath + "/" + name + "/src/main/java");
 
+        gc.setBaseResultMap(true);
+        // gc.setBaseColumnList(true);
+
 
         // 设置生成文件的作者信息
         gc.setAuthor("hdgaadd");

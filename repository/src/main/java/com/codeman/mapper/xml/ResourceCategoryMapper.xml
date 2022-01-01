@@ -2,4 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.codeman.mapper.ResourceCategoryMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codeman.domain.ResourceCategory">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
 </mapper>

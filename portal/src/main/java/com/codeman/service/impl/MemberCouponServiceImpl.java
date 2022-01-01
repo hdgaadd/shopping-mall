@@ -8,6 +8,7 @@ import com.codeman.dao.MemberCouponDao;
 import com.codeman.entity.CouponDetail;
 import com.codeman.service.MemberCouponService;
 import com.codeman.service.MemberService;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import exception.Asserts;
 import org.springframework.stereotype.Service;
 import util.CommonResult;
@@ -46,7 +47,7 @@ public class MemberCouponServiceImpl implements MemberCouponService {
         System.out.println("------------------------------carts" + carts);
         // 用户所有优惠券
         List<CouponDetail> couponDetails = memberCouponDao.getAllCoupon(memberService.getCurrentMember().getId());
-        System.out.println("--------------------------- couponDetails" + couponDetails);
+        System.out.println("--------------------------- couponDetails" + couponDetails.toString());
         // 可用优惠券
         List<CouponDetail> enable = new ArrayList<>();
         // 不可用优惠券
@@ -57,12 +58,18 @@ public class MemberCouponServiceImpl implements MemberCouponService {
             // 得到购物车总金额
             // 暂定表中没有金额就返回0
             BigDecimal total = getTotalAmout(carts);
+
             if (type.equals(CouponType.USEALL.toString())) {
-                if (total.subtract(couponDetail.getCoupons().getAmount()).intValue() >= 0) {
+                // 购物车总额满足优惠券门槛，即可添加
+                /*if (total.subtract(couponDetail.getCoupons().getAmount()).intValue() >= 0) {
+                    System.out.println(couponDetail);
                     enable.add(couponDetail);
-                }
+                }*/
+                // 暂定添加所有
+                enable.add(couponDetail);
             }
         }
+        System.out.println(enable);
         return enable;
     }
 

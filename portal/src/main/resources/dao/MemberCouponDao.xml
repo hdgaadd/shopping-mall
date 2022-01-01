@@ -2,50 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.codeman.dao.MemberCouponDao">
 
-    <resultMap id = "couponDetailMap" type="com.codeman.entity.CouponDetail">
-        <association property="coupons" resultMap="couponMap">
+    <resultMap id = "couponDetailMap" type="com.codeman.entity.CouponDetail" extends="com.codeman.mapper.CouponHistoryMapper.BaseResultMap">
+        <association property="coupons" columnPrefix = "c_" resultMap="com.codeman.mapper.CouponMapper.BaseResultMap">
         </association>
-        <association property ="couponProductRelations" resultMap="couponProductRelationMap">
-        </association>
-        <association property ="couponProductCategoryRelations" resultMap="couponProductCategoryRelationMap">
-        </association>
-    </resultMap>
-    <resultMap id="couponMap" type="com.codeman.domain.Coupon">
-        <result property="id" column="id"/>
-        <result property="type" column="type"/>
-        <result property="name" column="name"/>
-        <result property="count" column="count"/>
-        <result property="amount" column="amount"/>
-        <result property="couponLimit" column="couponLimit"/>
-        <result property="startTime" column="startTime"/>
-        <result property="endTime" column="endTime"/>
-    </resultMap>
-    <resultMap id="couponProductRelationMap" type="com.codeman.domain.CouponProductRelation">
-        <result property="id" column="id"/>
-        <result property="couponId" column="couponId"/>
-        <result property="productId" column="productId"/>
-    </resultMap>
-    <resultMap id="couponProductCategoryRelationMap" type="com.codeman.domain.CouponProductCategoryRelation">
-        <result property="id" column="id"/>
-        <result property="couponId" column="couponId"/>
-        <result property="productCategoryId" column="productCategoryId"/>
+        <collection property ="couponProductRelations" columnPrefix="cp_"  resultMap="com.codeman.mapper.CouponProductRelationMapper.BaseResultMap">
+        </collection>
+        <collection property ="couponProductCategoryRelations" columnPrefix = "cpr_" resultMap="com.codeman.mapper.CouponProductCategoryRelationMapper.BaseResultMap">
+        </collection>
     </resultMap>
     <select id="getAllCoupon" resultMap="couponDetailMap">
         SELECT DISTINCT
-            c.id,
-            c.type,
-            c.`name`,
-            c.count,
-            c.amount,
-            c.coupon_limit,
-            c.start_time,
-            c.end_time,
-            cp.id,
-            cp.coupon_id,
-            cp.product_id,
-            cpr.id,
-            cpr.coupon_id,
-            cpr.product_category_id
+            ch.*,
+            c.id c_id,
+            c.type c_type,
+            c.name c_name,
+            c.count c_count,
+            c.amount c_amount,
+            c.coupon_limit c_coupon_limit,
+            c.start_time c_start_time,
+            c.end_time c_end_time,
+            cp.id cp_id,
+            cp.coupon_id cp_coupon_id,
+            cp.product_id cp_product_id,
+            cpr.id cpr_id,
+            cpr.coupon_id cpr_coupon_id,
+            cpr.product_category_id cpr_product_category_id
         FROM
             coupon_history AS ch
                 LEFT JOIN coupon AS c ON ch.coupon_id = c.id

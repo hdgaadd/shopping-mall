@@ -30,7 +30,7 @@ public class MemberCouponController {
     private CartItemService cartItemService;
 
     @ApiOperation("获取用户购物车的所有优惠券")
-    @GetMapping("/coupon/{type}")
+    @GetMapping("/coupon/{type}") // type为USEALL
     public CommonResult<List<CouponDetail>> listCart(@PathVariable String type) {
         List<Cart> carts = cartItemService.getAllCart(memberService.getCurrentMember().getId(), null);
         List<CouponDetail> couponDetails = memberCouponService.listCart(carts, type);

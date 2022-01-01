@@ -1,6 +1,7 @@
 package com.codeman.entity;
 
 import com.codeman.domain.Coupon;
+import com.codeman.domain.CouponHistory;
 import com.codeman.domain.CouponProductCategoryRelation;
 import com.codeman.domain.CouponProductRelation;
 
@@ -10,7 +11,7 @@ import java.util.List;
  * @author hdgaadd
  * Created on 2021/12/11/14:32
  */
-public class CouponDetail {
+public class CouponDetail extends CouponHistory {
 
     private Coupon coupons;
 

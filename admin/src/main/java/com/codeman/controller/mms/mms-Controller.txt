@@ -1,0 +1,58 @@
+Marketing Management Service秒杀管理服务
+Order Management Service订单管理服务
+Content Management Service内容管理服务
+UserCenter Management Service用户中心管理服务
+Product Management Service商品管理服务
+
+CouponController
+// CREATE READ UPEATE DELETE
+// list(Integer type, String name, Integer pageNum, Integer pageNum) 根据优惠券类型和名称分页获取优惠券列表
+// getItem(Long id) 获取单个优惠券详情
+
+CouponHistoryController
+// list(Long couponId, Integer Status, String orderCode, Integer pageNum, Integer pageSize) 根据优惠券id，使用状态，订单编号分页获取优惠券历史记录
+// 优惠券在某个订单使用后，会把该优惠券的状态设置为使用，且把相应的订单编号填入优惠券历史记录表
+
+FlashPromotionController
+// CREATE READ UPDATE DELETE
+// getItemById、listByName
+// update(Long id, Integer status) 修改活动的上下线状态
+
+FlashPromotionProductRelationController
+// CREATE READ UPDATE DELETE
+// getItemById
+// 分页根据flashPromotionId，flashPromotionSessionId获取相关的商品id，再查出商品信息
+
+FlashPromotionSessionController
+// CREATE READ UPDATE DELETE
+// selectList(Long flashPromotionId) 获取所有可选场次，并给场次添加参加该场次的商品数量
+
+HomeAdvertiseController
+// CREATE READ UPDATE DELETE
+// getItem、list(Name, Type)、updateStatus
+
+HomeBrandController
+// CREATE READ UPDATE DELETE
+// updateStatus
+// list(String brandName, Integer status, Integer pageNum, Integer pageSize) 根据品牌关键字模糊分页查询所有品牌
+
+HomeNewProductController
+// CREATE READ UPDATE DELETE
+// updateStatus
+// list(String productName, Integer status, Integer pageNum, Integer pageSize) 根据商品名称关键字模糊分页查询所有商品
+
+HomeRecommendProductController
+// CREATE READ UPDATE DELETE
+// updateStatus(List<Long> ids)
+// updateSort(Long id, Integer sort) 修改推荐商品排序
+// list(String productName, Integer status, Integer pageNum, Integer pageSize) 根据商品名称关键字模糊分页查询所有商品
+
+HomeRecommendSubjectController
+// CREATE READ UPDATE DELETE
+// updateStatus(List<Long> ids)
+// updateSort(Long id, Integer sort) 修改首页推荐商品专题排序
+// list(String productName, Integer status, Integer pageNum, Integer pageSize) 根据商品专题名称关键字模糊分页查询所有商品
+
+
+
+
