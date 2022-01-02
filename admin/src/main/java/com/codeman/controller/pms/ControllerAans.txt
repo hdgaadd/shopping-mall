@@ -1,0 +1,27 @@
+BrandController
+// CREATE READ UPDATE DELETE
+
+ProductAttributeCategoryController
+// CREATE READ UPDATE DELETE
+// getListWithAttr() 获取所有的商品分类属性及其下属属性集合
+
+ProductAttributeController
+// CREATE READ UPDATE DELETE
+// getAttInfo(Long productCategoryId) 根据商品分类id获取List<商品分类的属性id+该属性的分类id>
+// delete(List<Long> ids> 传入某属性分类下的属性id集合，批量删除商品属性，删除后修改该属性分类的属性数量
+
+ProductController
+// cretae(ProductParam productParam) 创建商品，ProductParam包含各种List<商品的中间表的id对应关系>
+// getUpdateInfo(Long id) 根据商品id获取商品编辑信息
+// update(Long id, ProductParam productParam)
+// list(ProductQuery productQuery) 根据查询条件集合查询商品
+// getList(String keyword) 根据商品名称模糊查询商品
+// updateVerifyStatus(List<Long> ids, Integer verifyStatus) 批量修改审核状态，修改product表的审核状态，把审核记录插入审核记录表
+// updateStatus(List<Long> ids, Integer status) 批量修改商品的上下架状态
+// updateRecommendStatus(List<Long> ids, Integer recommendStatus)
+// updateNewStatus(Lis<Long> ids, Integer newStatus)
+// updateDeleteStatus(List<Long> ids, Integer deleteStatus)
+
+//SkuStockController
+// getList(Long id, String keyword) 根据商品id和sku编号模糊查询商品
+// update(List<SkuStock> skuStockList) 批量更新sku的库存信息
