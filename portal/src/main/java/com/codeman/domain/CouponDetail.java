@@ -1,4 +1,4 @@
-package com.codeman.entity;
+package com.codeman.domain;
 
 import com.codeman.domain.Coupon;
 import com.codeman.domain.CouponHistory;
@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * @author hdgaadd
  * Created on 2021/12/11/14:32
+ * @description 每一个CouponDetail代表用户的一张优惠券，其中优惠券包含了可使用的List<商品>、可使用的List<商品分类>
  */
 public class CouponDetail extends CouponHistory {
 

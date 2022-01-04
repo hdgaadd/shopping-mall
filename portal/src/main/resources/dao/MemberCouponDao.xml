@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.codeman.dao.MemberCouponDao">
 
-    <resultMap id = "couponDetailMap" type="com.codeman.entity.CouponDetail" extends="com.codeman.mapper.CouponHistoryMapper.BaseResultMap">
+    <resultMap id = "couponDetailMap" type="com.codeman.domain.CouponDetail" extends="com.codeman.mapper.CouponHistoryMapper.BaseResultMap">
         <association property="coupons" columnPrefix = "c_" resultMap="com.codeman.mapper.CouponMapper.BaseResultMap">
         </association>
         <collection property ="couponProductRelations" columnPrefix="cp_"  resultMap="com.codeman.mapper.CouponProductRelationMapper.BaseResultMap">

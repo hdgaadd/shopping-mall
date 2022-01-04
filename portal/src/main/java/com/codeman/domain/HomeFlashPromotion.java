@@ -1,4 +1,4 @@
-package com.codeman.entity;
+package com.codeman.domain;
 
 import com.codeman.domain.Product;
 import lombok.Data;

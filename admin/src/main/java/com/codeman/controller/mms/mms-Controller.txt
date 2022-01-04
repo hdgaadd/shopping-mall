@@ -1,4 +1,4 @@
-Marketing Management Service秒杀管理服务
+Marketing Management Service秒杀营销管理服务
 Order Management Service订单管理服务
 Content Management Service内容管理服务
 UserCenter Management Service用户中心管理服务

@@ -2,7 +2,7 @@ package com.codeman.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.codeman.domain.Product;
-import com.codeman.entity.CommonPage;
+import com.codeman.domain.CommonPage;
 import com.codeman.mapper.ProductMapper;
 import com.codeman.service.BrandService;
 import com.github.pagehelper.PageHelper;

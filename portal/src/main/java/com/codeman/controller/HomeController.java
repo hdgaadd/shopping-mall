@@ -2,7 +2,7 @@ package com.codeman.controller;
 
 import com.codeman.domain.Product;
 import com.codeman.domain.Subject;
-import com.codeman.entity.HomeResult;
+import com.codeman.domain.HomeResult;
 import com.codeman.service.HomeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

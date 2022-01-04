@@ -1,6 +1,6 @@
 package com.codeman.dao;
 
-import com.codeman.entity.CouponDetail;
+import com.codeman.domain.CouponDetail;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

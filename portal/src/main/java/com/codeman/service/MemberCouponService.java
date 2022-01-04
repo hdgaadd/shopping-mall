@@ -2,7 +2,7 @@ package com.codeman.service;
 
 import com.codeman.domain.Cart;
 import com.codeman.domain.Coupon;
-import com.codeman.entity.CouponDetail;
+import com.codeman.domain.CouponDetail;
 import util.CommonResult;
 
 import java.util.List;

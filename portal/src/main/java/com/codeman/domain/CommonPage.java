@@ -1,4 +1,4 @@
-package com.codeman.entity;
+package com.codeman.domain;
 
 import com.github.pagehelper.PageInfo;
 

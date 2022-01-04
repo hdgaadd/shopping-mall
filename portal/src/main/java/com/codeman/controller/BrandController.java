@@ -1,7 +1,7 @@
 package com.codeman.controller;
 
 import com.codeman.domain.Product;
-import com.codeman.entity.CommonPage;
+import com.codeman.domain.CommonPage;
 import com.codeman.service.BrandService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

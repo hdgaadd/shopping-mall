@@ -1,7 +1,7 @@
 package com.codeman.service;
 
 import com.codeman.domain.Product;
-import com.codeman.entity.CommonPage;
+import com.codeman.domain.CommonPage;
 
 /**
  * @author hdgaadd

@@ -2,7 +2,7 @@ package com.codeman.controller;
 
 import com.codeman.domain.Cart;
 import com.codeman.domain.Coupon;
-import com.codeman.entity.CouponDetail;
+import com.codeman.domain.CouponDetail;
 import com.codeman.service.CartItemService;
 import com.codeman.service.MemberCouponService;
 import com.codeman.service.MemberService;
