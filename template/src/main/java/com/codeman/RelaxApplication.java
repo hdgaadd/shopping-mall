@@ -9,7 +9,7 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 @EnableOpenApi
 @MapperScan({"com.codeman.mapper", "com.codeman.dao"})
 public class RelaxApplication {
-
+	// TEST
 	public static void main(String[] args) {
 		SpringApplication.run(RelaxApplication.class, args);
 	}
