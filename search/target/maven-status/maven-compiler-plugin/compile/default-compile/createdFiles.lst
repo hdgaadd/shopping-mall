@@ -1,0 +1,7 @@
+com\codeman\service\impl\EsServiceImpl.class
+com\codeman\entity\EsProduct.class
+com\codeman\mapper\EsMapper.class
+com\codeman\controller\EsController.class
+com\codeman\SearchApplication.class
+com\codeman\service\EsService.class
+com\codeman\repository\EsProductRepository.class

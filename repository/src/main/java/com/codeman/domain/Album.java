@@ -7,12 +7,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * <p>
  * 
- * </p>
- *
  * @author hdgaadd
- * @since 2022-01-01
+ * @since 2022-01-21
  */
 @Data
 @EqualsAndHashCode(callSuper = false)

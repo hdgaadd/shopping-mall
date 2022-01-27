@@ -1,6 +1,15 @@
 <component name="libraryTable">
   <library name="Maven: org.junit.platform:junit-platform-commons:1.7.2">
     <CLASSES>
+<<<<<<< HEAD
+      <root url="jar://D:/server/maven/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/server/maven/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/server/maven/repository/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2-sources.jar!/" />
+=======
       <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2.jar!/" />
     </CLASSES>
     <JAVADOC>
@@ -8,6 +17,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/org/junit/platform/junit-platform-commons/1.7.2/junit-platform-commons-1.7.2-sources.jar!/" />
+>>>>>>> 3c5f532b6099e9cc798c30ca1bb234239fa473cf
     </SOURCES>
   </library>
 </component>

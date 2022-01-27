@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codeman.mapper.EsMapper">
+    <select id="selectAll" resultType="com.codeman.entity.EsProduct">
+        SELECT DISTINCT
+            product.id,
+            product.`name`,
+            product.icon,
+            product.product_category_id,
+            product.product_attribute_category_id,
+            product.brand_id,
+            product.feight_template_id,
+            product.price,
+            product.weight,
+            product.sort,
+            product.sale,
+            product.`status`,
+            product_attribute.`name` AS attributeName
+        FROM
+            product
+                LEFT JOIN product_attribute_relation ON product_attribute_relation.product_id = product.id
+                LEFT JOIN product_attribute ON product_attribute_relation.attribute_id = product_attribute.id
+
+    </select>
+</mapper>

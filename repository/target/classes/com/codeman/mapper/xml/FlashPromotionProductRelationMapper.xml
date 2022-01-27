@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codeman.mapper.FlashPromotionProductRelationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codeman.domain.FlashPromotionProductRelation">
+        <id column="id" property="id" />
+        <result column="flash_promotion_id" property="flashPromotionId" />
+        <result column="flash_promotion_session_id" property="flashPromotionSessionId" />
+        <result column="product_id" property="productId" />
+        <result column="price" property="price" />
+        <result column="count" property="count" />
+        <result column="member_limit" property="memberLimit" />
+    </resultMap>
+
+</mapper>

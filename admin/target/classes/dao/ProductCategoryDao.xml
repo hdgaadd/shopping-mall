@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codeman.dao.ProductCategoryDao">
+    <resultMap id="listWithChildrenMap" type="com.codeman.dto.ProductCategoryWithChildrenItem" extends="com.codeman.mapper.ProductCategoryMapper.BaseResultMap">
+        <collection columnPrefix="ch_" resultMap="com.codeman.mapper.ProductCategoryMapper.BaseResultMap" property="childrens">
+        </collection>
+    </resultMap>
+    <select id="listWithChildren" resultMap="listWithChildrenMap">
+        SELECT
+        c1.id,
+        c1.`name`,
+        c1.description,
+        c1.parent_id,
+        c2.id AS ch_id,
+        c2.`name` AS ch_name,
+        c2.parent_id AS ch_parent_id,
+        c2.description AS ch_description
+        FROM
+        product_category AS c1
+        LEFT JOIN product_category AS c2 ON c1.id = c2.parent_id
+    </select>
+</mapper>

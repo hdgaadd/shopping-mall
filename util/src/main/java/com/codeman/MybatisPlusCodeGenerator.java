@@ -2,10 +2,7 @@ package com.codeman;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
-import com.baomidou.mybatisplus.generator.config.PackageConfig;
-import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.apache.commons.lang3.StringUtils;
 
@@ -33,7 +30,19 @@ public class MybatisPlusCodeGenerator {
 
     public static void main(String[] args) {
         // 代码生成器
-        AutoGenerator mybatisPlusCodeGenerator = new AutoGenerator();
+        AutoGenerator mpg = new AutoGenerator();
+
+        // 可变-------------------------设置Servic、Controller层为空-------------------------可变
+        TemplateConfig config = new TemplateConfig();
+        config.setService(null);
+        config.setServiceImpl(null);
+        config.setController(null);
+
+        // 从Libraries复制源文件，修改实体类或Mapper的代码
+        config.setEntity("templates/entity2.java");
+        config.setMapper("templates/mapper2.java");
+        mpg.setTemplate(config);
+
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
@@ -46,10 +55,15 @@ public class MybatisPlusCodeGenerator {
         // 是maven项目的结构，就是工程目录 + /src/main/java
         gc.setOutputDir(projectPath + "/" + name + "/src/main/java");
 
+
         // 开启映射结果集
         gc.setBaseResultMap(true);
         // 开启查询结果列
         // gc.setBaseColumnList(true);
+
+        // 可变-------------------------修改文件后缀名-------------------------可变
+        //gc.setEntityName("%sDO");
+        // gc.setServiceName("%sDO");
 
 
         // 设置生成文件的作者信息
@@ -62,7 +76,7 @@ public class MybatisPlusCodeGenerator {
         //gc.setServiceName("%sService");
 
         // 将上述的全局配置注入
-        mybatisPlusCodeGenerator.setGlobalConfig(gc);
+        mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dataSourceConfiguration = new DataSourceConfig();
@@ -74,15 +88,15 @@ public class MybatisPlusCodeGenerator {
         dataSourceConfiguration.setUsername("root");
         dataSourceConfiguration.setPassword("root");
 
-        mybatisPlusCodeGenerator.setDataSource(dataSourceConfiguration);
+        mpg.setDataSource(dataSourceConfiguration);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
 
         // 设置父级包名
-        pc.setParent("com");//controller entity service service.impl
+        pc.setParent("com.codeman");//controller entity service service.impl
 
-        pc.setModuleName(scanner("'com.'后面的模块名"));
+        // pc.setModuleName(scanner("'com.'后面的模块名"));
         //pc.setModuleName("sys");
 
         // 实体类名称
@@ -104,7 +118,7 @@ public class MybatisPlusCodeGenerator {
         pc.setController("controller");
 
         // 装填包信息对象
-        mybatisPlusCodeGenerator.setPackageInfo(pc);
+        mpg.setPackageInfo(pc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
@@ -139,8 +153,8 @@ public class MybatisPlusCodeGenerator {
         //strategy.setTablePrefix(pc.getModuleName() + "_");
         strategy.setTablePrefix("sys_");
 
-        mybatisPlusCodeGenerator.setStrategy(strategy);
+        mpg.setStrategy(strategy);
 
-        mybatisPlusCodeGenerator.execute();
+        mpg.execute();
     }
 }

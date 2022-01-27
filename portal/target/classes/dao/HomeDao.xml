@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codeman.dao.HomeDao">
+    <select id="getHotProjectList" resultType="com.codeman.domain.Product">
+        SELECT
+        product.id,
+        product.`name`,
+        product.icon,
+        product.product_category_id,
+        product.product_attribute_category_id,
+        product.brand_id,
+        product.feight_template_id,
+        product.price,
+        product.weight,
+        product.sort,
+        product.sale,
+        product.`status`
+        FROM
+        home_recommend_product
+        INNER JOIN product ON home_recommend_product.product_id = product.id
+        WHERE
+        home_recommend_product.`status` = 1 AND
+        product.`status` = 1
+    </select>
+</mapper>
