@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Maven: io.netty:netty-handler:4.1.65.Final">
     <CLASSES>
-<<<<<<< HEAD
       <root url="jar://D:/server/maven/repository/io/netty/netty-handler/4.1.65.Final/netty-handler-4.1.65.Final.jar!/" />
     </CLASSES>
     <JAVADOC>
@@ -9,15 +8,6 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://D:/server/maven/repository/io/netty/netty-handler/4.1.65.Final/netty-handler-4.1.65.Final-sources.jar!/" />
-=======
-      <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/io/netty/netty-handler/4.1.65.Final/netty-handler-4.1.65.Final.jar!/" />
-    </CLASSES>
-    <JAVADOC>
-      <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/io/netty/netty-handler/4.1.65.Final/netty-handler-4.1.65.Final-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/io/netty/netty-handler/4.1.65.Final/netty-handler-4.1.65.Final-sources.jar!/" />
->>>>>>> 3c5f532b6099e9cc798c30ca1bb234239fa473cf
     </SOURCES>
   </library>
 </component>

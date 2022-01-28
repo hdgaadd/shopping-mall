@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codeman.mapper.SeckillActivityMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.codeman.domain.SeckillActivity">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="commodity_id" property="commodityId" />
+        <result column="old_price" property="oldPrice" />
+        <result column="seckill_price" property="seckillPrice" />
+        <result column="activity_status" property="activityStatus" />
+        <result column="total_stock" property="totalStock" />
+        <result column="available_stock" property="availableStock" />
+        <result column="lock_stock" property="lockStock" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+    </resultMap>
+
+</mapper>

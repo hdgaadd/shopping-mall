@@ -19,7 +19,6 @@ public class EsProduct{
 
     @Id
     private Long id;
-
     @Field(type = FieldType.Text)
     private String name;
     @Field(type = FieldType.Keyword)

@@ -1,7 +1,6 @@
 <component name="libraryTable">
   <library name="Maven: com.github.pagehelper:pagehelper-spring-boot-autoconfigure:1.3.0">
     <CLASSES>
-<<<<<<< HEAD
       <root url="jar://D:/server/maven/repository/com/github/pagehelper/pagehelper-spring-boot-autoconfigure/1.3.0/pagehelper-spring-boot-autoconfigure-1.3.0.jar!/" />
     </CLASSES>
     <JAVADOC>
@@ -9,15 +8,6 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://D:/server/maven/repository/com/github/pagehelper/pagehelper-spring-boot-autoconfigure/1.3.0/pagehelper-spring-boot-autoconfigure-1.3.0-sources.jar!/" />
-=======
-      <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/com/github/pagehelper/pagehelper-spring-boot-autoconfigure/1.3.0/pagehelper-spring-boot-autoconfigure-1.3.0.jar!/" />
-    </CLASSES>
-    <JAVADOC>
-      <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/com/github/pagehelper/pagehelper-spring-boot-autoconfigure/1.3.0/pagehelper-spring-boot-autoconfigure-1.3.0-javadoc.jar!/" />
-    </JAVADOC>
-    <SOURCES>
-      <root url="jar://$APPLICATION_HOME_DIR$/apache-maven-3.5.4-bin/reposity/com/github/pagehelper/pagehelper-spring-boot-autoconfigure/1.3.0/pagehelper-spring-boot-autoconfigure-1.3.0-sources.jar!/" />
->>>>>>> 3c5f532b6099e9cc798c30ca1bb234239fa473cf
     </SOURCES>
   </library>
 </component>
