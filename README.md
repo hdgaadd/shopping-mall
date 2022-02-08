@@ -29,7 +29,7 @@ shipping-mall
 
 ## 总设计
 
-![](E:\Z_relax\note\images\shopping_mall.png)
+![](https://codeman666.oss-cn-beijing.aliyuncs.com/GitHub/shopping-mall/shopping_mall.png)
 
 ## 优选商品-商品专题-话题-举报-帮助模块
 
@@ -99,7 +99,7 @@ shipping-mall
 
 **UML**
 
- ![order_task](E:\Z_relax\note\images\cms.png)
+ ![order_task](https://codeman666.oss-cn-beijing.aliyuncs.com/GitHub/shopping-mall/cms.png)
 
 
 
@@ -163,7 +163,7 @@ shipping-mall
 
 **UML**
 
- ![order_task](E:\Z_relax\note\images\oms.png)
+ ![order_task](https://codeman666.oss-cn-beijing.aliyuncs.com/GitHub/shopping-mall/oms.png)
 
 
 
@@ -273,7 +273,7 @@ shipping-mall
 
 **UML**
 
- ![order_task](E:\Z_relax\note\images\pms.png)
+ ![order_task](https://codeman666.oss-cn-beijing.aliyuncs.com/GitHub/shopping-mall/pms.png)
 
 
 
@@ -349,7 +349,7 @@ shipping-mall
 
 **UML**
 
- ![order_task](E:\Z_relax\note\images\sms.png)
+ ![order_task](https://codeman666.oss-cn-beijing.aliyuncs.com/GitHub/shopping-mall/sms.png)
 
 
 
@@ -417,13 +417,13 @@ shipping-mall
 
 后台管理员模块
 
- ![order_task](E:\Z_relax\note\images\admin.png)
+ ![order_task](https://codeman666.oss-cn-beijing.aliyuncs.com/GitHub/shopping-mall/admin.png)
 
 
 
 用户模块
 
- ![order_task](E:\Z_relax\note\images\member.png)
+ ![order_task](https://codeman666.oss-cn-beijing.aliyuncs.com/GitHub/shopping-mall/member.png)
 
 
 
