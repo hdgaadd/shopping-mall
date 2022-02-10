@@ -7,7 +7,7 @@ shipping-mall
 ├── portal -- 前台
 ├── repository
 ├── search -- 商品搜索
-└──  seckill -- 秒杀模块
+└── seckill -- 秒杀模块
 ```
 
 # choosing technology
