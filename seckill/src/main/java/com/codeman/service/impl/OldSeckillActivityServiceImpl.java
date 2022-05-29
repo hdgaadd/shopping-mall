@@ -21,11 +21,13 @@ public class OldSeckillActivityServiceImpl extends ServiceImpl<SeckillActivityMa
     @Resource
     private SeckillActivityMapper seckillActivityMapper;
     static int count = 0;
+
     @Override
     public String purchase(Integer activityId) {
         SeckillActivity seckillActivity = seckillActivityMapper.selectById(activityId);
         int totalStock = seckillActivity.getTotalStock();
         System.out.println("now is point" + count + ", totalstock is " + totalStock);
+
         if (totalStock > 1) {
             count++;
             totalStock -= 1;

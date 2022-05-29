@@ -22,17 +22,24 @@ public class EsController {
     @Resource
     private EsService esService;
 
-    @ApiOperation("导入商品到ElasticSearch")
+    @ApiOperation("导入")
     @GetMapping("/importAll")
     public CommonResult<String> importAll() {
         int count = esService.importAll();
-        return CommonResult.success("导入的商品数量为：" + count);
+        return CommonResult.success("导入数量为：" + count);
     }
 
     @ApiOperation("ik分词器查询")
-    @GetMapping("selectMatch")
+    @GetMapping("/selectMatch") // 张
     public CommonResult<List<EsProduct>> selectMatch(@RequestParam String value) throws IOException {
         List<EsProduct> esProducts = esService.selectMatch("name", value);
         return CommonResult.success(esProducts);
+    }
+
+    @ApiOperation("search")
+    @GetMapping("/search")
+    public CommonResult<String> selectMatch() throws IOException {
+        esService.search();
+        return CommonResult.success("successful");
     }
 }

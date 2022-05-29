@@ -10,6 +10,11 @@ import java.util.List;
  * Created on 2021/12/06 21:15:56
 */
 public interface EsService {
+    /**
+     * 导入
+     *
+     * @return
+     */
     int importAll();
 
     /**
@@ -17,4 +22,9 @@ public interface EsService {
      * @return
      */
     List<EsProduct> selectMatch(String key, String value) throws IOException;
+
+    /**
+     * 查询测试
+     */
+    void search();
 }

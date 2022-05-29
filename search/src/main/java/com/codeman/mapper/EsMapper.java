@@ -1,6 +1,7 @@
 package com.codeman.mapper;
 
 import com.codeman.entity.EsProduct;
+import com.codeman.entity.LearnTeacher;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -11,5 +12,5 @@ import java.util.List;
 */
 @Mapper
 public interface EsMapper {
-    List<EsProduct> selectAll();
+    List<LearnTeacher> selectAll();
 }

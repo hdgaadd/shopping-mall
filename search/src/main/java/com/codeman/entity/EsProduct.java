@@ -13,7 +13,7 @@ import java.math.BigDecimal;
  * Created on 2021/12/06/21:26
  */
 @Data
-@Document(indexName = "es", shards = 1,replicas = 0)
+@Document(indexName = "esteacher", shards = 1,replicas = 0)
 public class EsProduct{
     private static final long serialVersionUID = 1L;
 
@@ -23,24 +23,4 @@ public class EsProduct{
     private String name;
     @Field(type = FieldType.Keyword)
     private String icon;
-    @Field(type = FieldType.Keyword)
-    private Long productCategoryId;
-    @Field(type = FieldType.Keyword)
-    private Long productAttributeCategoryId;
-    @Field(type = FieldType.Keyword)
-    private Long brandId;
-    @Field(type = FieldType.Keyword)
-    private Long feightTemplateId;
-    @Field(type = FieldType.Keyword)
-    private BigDecimal price;
-    @Field(type = FieldType.Keyword)
-    private BigDecimal weight;
-    @Field(type = FieldType.Keyword)
-    private Integer sort;
-    @Field(type = FieldType.Keyword)
-    private Integer sale;
-    @Field(type = FieldType.Keyword)
-    private Integer status;
-    @Field(type = FieldType.Keyword)
-    private String attributeName;
 }
